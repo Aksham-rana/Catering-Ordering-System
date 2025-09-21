@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Reservation & Ordering System</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Catering</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Fresh & Traditional Catering</h1>
+        <p>Order authentic catering from rural towns and support local culture. Freshly prepared for your events!</p>
+        <a href="register.html" class="btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Featured Catering</h2>
+      <div class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Catering Reservation and Ordering System</p>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCbIEs7pMdVDI3hEZC2o-SbuqBlYBX-89s",
+      authDomain: "cateringsystem-9ec1b.firebaseapp.com",
+      projectId: "cateringsystem-9ec1b",
+      storageBucket: "cateringsystem-9ec1b.appspot.com",
+      messagingSenderId: "776751308002",
+      appId: "1:776751308002:web:780402b20a5fd7e89092bb"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    const productGrid = document.querySelector(".product-grid");
+
+    // Load products from Firestore
+    async function loadProducts() {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      productGrid.innerHTML = "";
+      querySnapshot.forEach(doc => {
+        const data = doc.data();
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+        card.innerHTML = `
+          <img src="${data.imageUrl}" alt="${data.name}">
+          <h3>${data.name}</h3>
+          <p>${data.description}</p>
+          <p>₹${data.price}</p>
+          <button data-id="${doc.id}" data-name="${data.name}" data-price="${data.price}">Add to Cart</button>
+        `;
+        productGrid.appendChild(card);
+      });
+
+      attachCartEvents();
+    }
+
+    // Attach click events to Add to Cart buttons
+    function attachCartEvents() {
+      const buttons = document.querySelectorAll(".product-card button");
+      buttons.forEach(button => {
+        button.addEventListener("click", async () => {
+          const user = auth.currentUser;
+          if (!user) return alert("Please login first.");
+
+          const productId = button.dataset.id;
+          const name = button.dataset.name;
+          const price = parseInt(button.dataset.price);
+
+          try {
+            await addDoc(collection(db, "carts", user.uid, "items"), {
+              productId, name, price, quantity: 1
+            });
+            alert(`${name} added to cart!`);
+          } catch (err) {
+            alert(err.message);
+          }
+        });
+      });
+    }
+
+    // Only allow cart actions for logged-in users
+    onAuthStateChanged(auth, user => {
+      if (!user) {
+        console.log("User not logged in. Add to Cart disabled.");
+      }
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>

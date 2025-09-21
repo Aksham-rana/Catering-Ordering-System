@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Catering System</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Catering</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cart-container">
+      <h2>My Cart</h2>
+      <table class="cart-table" id="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="cart-table-body">
+          <!-- Cart items dynamically added here -->
+        </tbody>
+      </table>
+      <div class="cart-summary" id="cart-summary">
+        <h3 id="cart-total">Total: ₹0</h3>
+        <button id="place-order-btn" class="place-order">Place Order</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Catering Reservation and Ordering System</p>
+  </footer>
+
+  <!-- Firebase + Order JS -->
+  <script type="module" src="assets/js/order.js"></script>
+</body>
+</html>

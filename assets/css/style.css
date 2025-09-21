@@ -1,0 +1,613 @@
+body{
+    margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  background: #f39c12;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.hero-overlay h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #d35400;
+}
+
+/* Products Section */
+.products {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #2c3e50;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background: #d35400;
+}
+
+/* Footer */
+footer {
+    margin: 0;
+  text-align: center;
+  padding: 25px 20px;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  font-size: 0.95rem;
+  margin-top: 50px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+
+                    /*login css*/
+
+/* Modern Login Page */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(0, 0, 0, 0.228);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.login-card h2 {
+  font-size: 2.2rem;
+  color: #333333;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.login-card .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-card label {
+  font-size: 0.9rem;
+  color: #555555;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 8px rgba(255, 126, 95, 0.3);
+  outline: none;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 14px;
+  background: #ff7e5f;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+  background: #ff6347;
+}
+
+.login-card p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.login-card p a {
+  color: #ff7e5f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-card p a:hover {
+  text-decoration: underline;
+}
+
+
+
+                    /*register css*/
+
+
+/* Register Page */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 80vh;
+  
+  padding: 20px;
+}
+
+.auth-container form {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.auth-container form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container h2 {
+  font-size: 2.2rem;
+  color: #333333;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.auth-container .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.auth-container label {
+  font-size: 0.9rem;
+  color: #555555;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #a18cd1;
+  box-shadow: 0 0 8px rgba(161, 140, 209, 0.3);
+  outline: none;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 14px;
+  background: #a18cd1;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: #8b5fc5;
+}
+
+.auth-container p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.auth-container p a {
+  color: #a18cd1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+                    /* Admin Dashboard Styles */
+                    
+.admin-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.admin-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.admin-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.admin-section h3 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.admin-section form .form-group {
+  margin-bottom: 15px;
+}
+
+.admin-section form button {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.admin-section form button:hover {
+  background: #d35400;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-table th {
+  background: #f39c12;
+  color: #fff;
+}
+
+.order-table tr:hover {
+  background: #f2f2f2;
+}
+
+
+
+                    /*cart css*/
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background: #f39c12;
+  color: #fff;
+}
+
+.cart-table tr:hover {
+  background: #f2f2f2;
+}
+
+.cart-table input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cart-table button {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart-table button:hover {
+  background: #c0392b;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-summary h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.cart-summary .place-order {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart-summary .place-order:hover {
+  background: #1e8449;
+}
+
+
+
+                /*my-order css*/
+
+
+.orders-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.orders-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+  background: #f39c12;
+  color: #fff;
+}
+
+.orders-table tr:hover {
+  background: #f2f2f2;
+}
+
+
+
+
+                    /*profile css*/
+
+.profile-container {
+  max-width: 500px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.profile-container .form-group {
+  margin-bottom: 15px;
+}
+
+.profile-container .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.profile-container .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.profile-container button {
+  width: 100%;
+  padding: 12px;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.profile-container button:hover {
+  background: #d35400;
+}
