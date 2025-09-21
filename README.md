@@ -46,5 +46,5 @@ Quickly explore the system using the following demo account:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/<your-username>/catering-system.git
+   git clone https://github.com/Aksham-rana/Catering-Ordering-System/tree/main
 
